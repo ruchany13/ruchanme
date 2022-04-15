@@ -24,7 +24,9 @@ title = "Application of Nginx Load Balancer with Docker Compose"
  - [Docker](https://docs.docker.com/get-docker/)
  - Text editor, Prefer [Visual Studio Code](https://code.visualstudio.com/download)
  
- If you are ready, we can start. File systems:
+ If you are ready, we can start. Load balancer seperate request each server. We will create two server for load balancing. Every server include different index.html file so we can check the system. The name of servers **app1** and **app2** . And we will create nginx file for load balancer configs. We will run on Docker with **docker-compose.yml** file. 
+
+ File systems:
 ```.
 --- NginxLB
   +-- docker-compose.yml
@@ -54,7 +56,9 @@ mkdir app1
 mkdir app2
 ```
 
-## Create Nginx config
+## Create Nginx Config
+
+We'll create config file. This config file include how Nginx work and which ports.  
 
 
 
