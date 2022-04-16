@@ -196,8 +196,6 @@ docker-compose up
 ```
 Let's check our *localhost:7003* and see which server respond. That is. Very easy and useful.
 
-![alt text](https://github.com/ruchany13/ruchanme/blob/blog/content/posts/Screen%20Shot%202022-04-17%20at%2001.20.47.png)
-![app 1](https://github.com/ruchany13/ruchanme/blob/blog/content/posts/Screen%20Shot%202022-04-17%20at%2001.21.00.png)
 
 Last hint: You can use with *-d* parameters for use terminal. It'll work back the terminal.
 
