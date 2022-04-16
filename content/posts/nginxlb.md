@@ -65,12 +65,11 @@ We'll create config file in nginx file. This config file include how Nginx work 
 ```
 http {
     upstream loadbalancer {
-      server localhost:7001;
-      server localhost:7002;
+      server 172.17.0.1:7001;
+      server 172.17.0.1:7002;
     }
   
     server {
-      listen 80;
       location / {
         proxy_pass http://loadbalancer;
       }
@@ -100,14 +99,14 @@ services:
   nginxserver:
     build: ./nginx
     ports:
-      - "7003:80"
+      - "80:80"
     depends_on:
       - app1
       - app2
 ```
 The services are include our docker containers. First containers is main server.
 - **nginxserver** is name of main server. We run website on this server.
-- **ports** are include which ports we use. Nginx expose 80 port for request. We'll use 7003 for connect 80 port in nginx.
+- **ports** are include which ports we use. Nginx expose 80 port for request. We'll use 80 for connect 80 port in nginx.
 - **depends_on** meaning this service depend on these services for running. They don't run, this service doesn't run.
 
 Next, we'll create our server app1 and app2.
@@ -168,7 +167,7 @@ services:
   nginxserver:
     build: ./nginx
     ports:
-      - "7003:80"
+      - "80:80"
     depends_on:
       - app1
       - app2
@@ -196,6 +195,9 @@ This command create, build and run services. That is very easy. Yes with one com
 docker-compose up
 ```
 Let's check our *localhost:7003* and see which server respond. That is. Very easy and useful.
+
+![alt text](https://github.com/ruchany13/ruchanme/blob/blog/content/posts/Screen%20Shot%202022-04-17%20at%2001.20.47.png)
+![app 1](https://github.com/ruchany13/ruchanme/blob/blog/content/posts/Screen%20Shot%202022-04-17%20at%2001.21.00.png)
 
 Last hint: You can use with *-d* parameters for use terminal. It'll work back the terminal.
 
