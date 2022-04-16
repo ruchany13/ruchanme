@@ -5,6 +5,8 @@ title = "Application of Nginx Load Balancer with Docker Compose"
 
 ***Hello everone! I want to talking about Nginx and Docker. I'll talking about creating load balancer with Nginx on Docker. I want to write about implementation so If you have any problem about load balancer, nginx, docker etc. you can click links under the text.***
 
+**This file in my [Github]("https://github.com/ruchany13/MyDockerExamples/tree/main/NginxLB")**
+
 ## Load Balancer
 
  A load balancer acts as the “traffic cop” sitting in front of your servers and routing client requests across all servers capable of fulfilling those requests in a manner that maximizes speed and capacity utilization and ensures that no one server is overworked, which could degrade performance. If a single server goes down, the load balancer redirects traffic to the remaining online servers. When a new server is added to the server group, the load balancer automatically starts to send requests to it.
@@ -193,8 +195,15 @@ This command create, build and run services. That is very easy. Yes with one com
 ```bash
 docker-compose up
 ```
-Let's check our *localhost:7003* and see which server respond.
+Let's check our *localhost:7003* and see which server respond. That is. Very easy and useful.
 
+Last hint: You can use with *-d* parameters for use terminal. It'll work back the terminal.
+
+```bash
+docker-compose up -d
+```
+
+Thank you for reading:)
 
 
 
