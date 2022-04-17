@@ -197,6 +197,11 @@ docker-compose up
 ```
 Let's check our *localhost:7003* and see which server respond. That is. Very easy and useful.
 
+![App1](https://github.com/ruchany13/ruchanme/blob/main/content/images/NginxLBApp1.png)
+
+![App2](https://github.com/ruchany13/ruchanme/blob/main/content/images/NginxLBApp2.png)
+
+
 
 Last hint: You can use with *-d* parameters for use terminal. It'll work back the terminal.
 
