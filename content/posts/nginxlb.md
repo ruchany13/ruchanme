@@ -267,7 +267,7 @@ docker-compose up
 ```
 Let's check our *localhost:7003* and see which server responds. That is. Very easy and useful. 
 
-![App1](../../static/NginxLBApp1.png)
+![App1](/NginxLBApp1.png)
 
 
 
