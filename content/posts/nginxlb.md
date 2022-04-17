@@ -265,12 +265,10 @@ This command creates, builds and runs services. That is very easy. Yes with one 
 ```bash
 docker-compose up
 ```
-Let's check our *localhost:7003* and see which server responds. That is. Very easy and useful.
+Let's check our *localhost:7003* and see which server responds. That is. Very easy and useful. 
 
-![App1](https://github.com/ruchany13/ruchanme/blob/main/static/NginxLBApp1.png)
-
-
-
+![App1](NginxLBApp1.png)
+![App2](NginxLBApp2.png)
 
 Last hint: You can use with *-d* parameters for use terminal. It'll work back at the terminal.
 
