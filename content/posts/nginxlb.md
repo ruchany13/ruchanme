@@ -5,7 +5,7 @@ title = "Application of Nginx Load Balancer with Docker Compose"
 
 ***Hello everone! I want to talking about Nginx and Docker. I'll talking about creating load balancer with Nginx on Docker. I want to write about implementation so If you have any problem about load balancer, nginx, docker etc. you can click links under the text.***
 
-**This file in my [Github]("https://github.com/ruchany13/MyDockerExamples/tree/main/NginxLB")**
+**This file in my [Github](https://github.com/ruchany13/MyDockerExamples/tree/local/NginxLB)**
 
 ## Load Balancer
 
