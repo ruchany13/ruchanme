@@ -3,7 +3,7 @@ date = "2022-03-10"
 title = "Application of Nginx Load Balancer with Docker Compose"
 +++
 
-***Hello, everyone! I want to talk about Nginx and Docker. I'll talk about creating a load balancer with Nginx on Docker. I want to write about implementation so If you have any problems with load balancer, nginx, docker etc. you can click the links under the text.***
+***Hello, everyone! I want to talk about Nginx and Docker. I'll talk about creating a load balancer with Nginx on Docker. I'll write about implementation so If you have any problems with load balancer, nginx, docker etc. you can click the links under the text.***
 
 **This file in my [Github](https://github.com/ruchany13/MyDockerExamples/tree/local/NginxLB)**
 
