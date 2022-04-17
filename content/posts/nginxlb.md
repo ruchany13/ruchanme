@@ -21,13 +21,13 @@ title = "Application of Nginx Load Balancer with Docker Compose"
  You can find a lot of detail about Nginx in this [link](https://docs.docker.com/get-started/overview/).
  
  # Implementation
-  Yes, we can start  write a little bit code, config file. It'll be funny:)
+   Yes, we can start writing a little bit of code, and a config file. It’ll be funny:)
 
  **Firstly you need install this**
  - [Docker](https://docs.docker.com/get-docker/)
  - Text editor, Prefer [Visual Studio Code](https://code.visualstudio.com/download)
  
- If you are ready, we can start. Load balancer seperate request each server. We will create two server for load balancing. Every server include different index.html file so we can check the system. The name of servers **app1** and **app2** . And we will create nginx file for load balancer configs. We will run on Docker with **docker-compose.yml** file. 
+If you are ready, we can start. The load balancer separates requests from each server. We will create two servers for load balancing. Every server includes different index.html file so we can check the system. The name of servers app1 and app2. And we will create an Nginx file for load balancer configs. We will run on Docker with a docker-compose.yml file.
 
  File systems:
 ```.
@@ -61,7 +61,7 @@ mkdir app2
 
 ## Create Nginx Config
 
-We'll create config file in nginx file. This config file include how Nginx work and which ports.
+We'll create a config file in the nginx directory. This config file includes how Nginx work and which ports.
 
 ```
 http {
@@ -81,9 +81,9 @@ http {
 
 ```
 
-We are run on the local machine, so you we'll write localhost for server. We'll use 7001 and 7002 ports for servers. You can change your ports or server IP. If you change port and IP adress you don't forgot change in the docker-compose.yml .
+We are run on the local machine, so we'll write 172.17.0.1 for the server. This IP is local IP. We'll use 7001 and 7002 ports for servers. You can change your ports or server IP. If you change the port and IP address don't forget to change in the docker-compose.yml.
 
-We'll run website on main server. Main server Dockerfile:
+We'll run a website on the main server. Main server Dockerfile:
 
 ```Dockerfile
 FROM nginx
@@ -105,16 +105,18 @@ services:
       - app1
       - app2
 ```
-The services are include our docker containers. First containers is main server.
-- **nginxserver** is name of main server. We run website on this server.
-- **ports** are include which ports we use. Nginx expose 80 port for request. We'll use port 7003 for connect 80 port in nginx.
-- **depends_on** meaning this service depend on these services for running. They don't run, this service doesn't run.
+The services include our docker containers. The first container is main server.
+- **nginxserver** is the name of the main server. We run the website on this server.
+
+- **ports** include which ports we use. Nginx exposes 80 ports for requests. We'll use port 7003 to connect 80 ports in nginx.
+
+- **depends_on** meaning this service depends on these services for running. They don't run, this service doesn't run.
 
 Next, we'll create our server app1 and app2.
 
 ## App1 and App2
 
-Firstly, we'll create a Dockerfile for app1 in app1 file. You can copy this file app2.
+Firstly, we'll create a Dockerfile for app1 in the app1 file. You can copy this file app2.
 
 ```Dockerfile
 FROM nginx
@@ -123,9 +125,10 @@ COPY ./index.html /usr/share/nginx/html/index.html
 ````
 
 
-This is same with app2. But, index.html have a little bit different. 
+This is the same with app2. But, index.html has a little bit different. 
 
 App1 index.html:
+
 ```html
 <html>
      <div style="text-align: center;"> 
@@ -136,6 +139,7 @@ App1 index.html:
 ```
 
 App2 index.html:
+
 ```html
 <html>
      <div style="text-align: center;"> 
@@ -144,8 +148,7 @@ App2 index.html:
      </div>
  </html>
 ```
-
-Okay, we created html page. Which server is respond our request write in html. So we can check our systems. Now, we can add our servers in docker-compose.yml.
+Okay, we created an Html page. Which server responds to our request to write in Html. So we can check our systems. Now, we can add our servers in docker-compose.yml.
 
 ```yml
   app1:
@@ -158,7 +161,7 @@ Okay, we created html page. Which server is respond our request write in html. S
     ports:
       - "7002:80"
 ```
-We created servieces for each servers. We define ports in *nginx.conf* file. We use these ports.
+We created services for each server. We define ports in *nginx.conf* file. We use these ports.
 
 Lastly *docker-compose.yml*:
 ```yml
@@ -185,24 +188,24 @@ services:
 
 
 ## Build and Run
-Now, last step is build compose file and run on our localhost.
+Now, the last step is building compose file and run on our localhost.
 
 You have to same directory with *docker-compose.yml*
-We will run docker compose file. Docker build services with Dockerfiles we created.
+We will run the docker-compose file. Docker build services with Dockerfiles we created.
 
-This command create, build and run services. That is very easy. Yes with one command!
+This command creates, builds and runs services. That is very easy. Yes with one command!
 
 ```bash
 docker-compose up
 ```
-Let's check our *localhost:7003* and see which server respond. That is. Very easy and useful.
+Let's check our *localhost:7003* and see which server responds. That is. Very easy and useful.
 
 ![App1](https://github.com/ruchany13/ruchanme/blob/main/static/NginxLBApp1.png)
 
 
 
 
-Last hint: You can use with *-d* parameters for use terminal. It'll work back the terminal.
+Last hint: You can use with *-d* parameters for use terminal. It'll work back at the terminal.
 
 ```bash
 docker-compose up -d
