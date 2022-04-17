@@ -20,12 +20,79 @@ title = "Application of Nginx Load Balancer with Docker Compose"
  Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.
  You can find a lot of detail about Nginx in this [link](https://docs.docker.com/get-started/overview/).
  
+ # Installation
+ Now, we'll install some apps for implementation. I'll write installation for MacOS and Ubuntu. I'm using MacOs.
+
+ ## Docker
+
+ - **Macos**: 
+ You can download from the [website](https://www.docker.com/products/docker-desktop/) or with [HomeBrew](https://brew.sh/). If you don't have, the *brew installation:*
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+If you install HomeBrew we can continue:
+ ```bash
+ brew cask install docker
+ docker --version
+ ```
+ That is very easy. You can check Docker Installation with second command.
+
+ - **Ubuntu:**
+```bash
+sudo apt update
+sudo apt upgrade
+
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+
+Yes, It looks complex but, don't be afraid. Just copy and paste:) If you want to learn more details about installation click the [link](https://docs.docker.com/engine/install/ubuntu/).
+
+## Text Editor
+I'm using Visual Studio Code on MacOS but in linux server you can use vim or nano. If you have GUI, you can use Visual Studio.
+
+### Visual Studio
+- **Macos**:
+
+```bash
+brew install --cask visual-studio-code
+```
+- **Ubuntu with GUI:**
+
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install software-properties-common 
+sudo apt install apt-transport-https wget
+
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+
+sudo apt install code
+```
+Or, you can download on [Snap Store](https://snapcraft.io/store).
+```bash
+sudo apt update
+sudo apt install snapd
+sudo snap install code --classic
+```
+***Hint:*** Every time in Linux, before installation use update command.
+
  # Implementation
    Yes, we can start writing a little bit of code, and a config file. It’ll be funny:)
-
- **Firstly you need install this**
- - [Docker](https://docs.docker.com/get-docker/)
- - Text editor, Prefer [Visual Studio Code](https://code.visualstudio.com/download)
  
 If you are ready, we can start. The load balancer separates requests from each server. We will create two servers for load balancing. Every server includes different index.html file so we can check the system. The name of servers app1 and app2. And we will create an Nginx file for load balancer configs. We will run on Docker with a docker-compose.yml file.
 
