@@ -22,6 +22,7 @@ title = "Application of Nginx Load Balancer with Docker Compose"
  
  # Implementation
   Yes, we can start  write a little bit code, config file. It'll be funny:)
+
  **Firstly you need install this**
  - [Docker](https://docs.docker.com/get-docker/)
  - Text editor, Prefer [Visual Studio Code](https://code.visualstudio.com/download)
@@ -99,14 +100,14 @@ services:
   nginxserver:
     build: ./nginx
     ports:
-      - "80:80"
+      - "7003:80"
     depends_on:
       - app1
       - app2
 ```
 The services are include our docker containers. First containers is main server.
 - **nginxserver** is name of main server. We run website on this server.
-- **ports** are include which ports we use. Nginx expose 80 port for request. We'll use 80 for connect 80 port in nginx.
+- **ports** are include which ports we use. Nginx expose 80 port for request. We'll use port 7003 for connect 80 port in nginx.
 - **depends_on** meaning this service depend on these services for running. They don't run, this service doesn't run.
 
 Next, we'll create our server app1 and app2.
@@ -167,7 +168,7 @@ services:
   nginxserver:
     build: ./nginx
     ports:
-      - "80:80"
+      - "7003:80"
     depends_on:
       - app1
       - app2
