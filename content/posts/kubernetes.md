@@ -8,6 +8,9 @@
 ## Requirements
 - Create DigitalOcean Account (If you have student Github Student Pack).
 - Kubernetes
+
+## What we will do?
+About Kubernets architecture, file architecture etc.
 ## Create Server with Terraform
 
 ## Download Kubernetes with Ansible
