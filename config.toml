@@ -15,8 +15,8 @@ enableEmoji = true
     author = "Ruchan Yalçın"
     # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
     description = "Ruchan Yalçın's personal website"
-    keywords = "blog,developer,personal,devops,computer"
-    info = ["DevOps | Computer Engineering Student"]
+    keywords = "blog,developer,kubernetes,devops,computer science, docker, nginx"
+    info = ["DevOps at Basistek | CS Student"]
     
     #gravatar = "ruchany13@gmail.com"
     dateFormat = "January 2, 2006"
