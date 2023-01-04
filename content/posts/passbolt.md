@@ -1,5 +1,5 @@
 +++ 
-date = "2023-01-13" 
+date = "2023-01-04" 
 title = "Passbolt Password Manager with External Database" 
 +++
 
