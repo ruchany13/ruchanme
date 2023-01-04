@@ -1,3 +1,7 @@
++++ 
+date = "2023-01-13" 
+title = "Passbolt Password Manager with External Database" 
++++
 
 # Requirements
 
