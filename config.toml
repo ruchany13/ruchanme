@@ -131,7 +131,7 @@ enableEmoji = true
     name = "Medium"
     icon = "fa fa-2x fa-medium"
     weight = 5
-    url = "https://ruchany13.medium.com/"
+    url = "https://medium.com/@ruchany13"
 
 
 [languages.en]
