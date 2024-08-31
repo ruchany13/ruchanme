@@ -1,9 +1,7 @@
 # Ruchan Yalçın
 Hello!
-I'm CS student at Yalova University and DevOps Engineer at Basistek Information Tech. In my job, I set up, configure, and maintain on-premise K8S environments for customers.
+I'm DevOps Engineer at Basistek Information Tech and I'm CS student at Yalova University. In my job, I set up, configure, and maintain on-premise K8S environments for customers.
 
-In this website, I'm writing useful information about DevOps. 
+In this website, I'm trying share my information and projects.
 
-You can ask anything ruchany13@gmail.com .
-
-I'm always open for a new job :)
+You can ask anything via e-mail ruchany13@gmail.com .
