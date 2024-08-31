@@ -1,4 +1,4 @@
-baseURL = "http://www.example.com"
+baseURL = "http://www.ruchan.dev"
 title = "Ruchan Yalçın"
 theme = "hugo-coder"
 languageCode = "en"
@@ -15,7 +15,7 @@ enableEmoji = true
     author = "Ruchan Yalçın"
     # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
     description = "Ruchan Yalçın's personal website"
-    keywords = "blog,developer,kubernetes,devops,computer science, docker, nginx"
+    keywords = "blog,developer,kubernetes,devops,computer science, docker, nginx, lb, aws, gcp, postgresql"
     info = ["DevOps at Basistek | CS Student"]
     
     #gravatar = "ruchany13@gmail.com"
@@ -29,7 +29,7 @@ enableEmoji = true
     # Specify light/dark colorscheme
     # Supported values:
     # "auto" (use preference set by browser)
-    # "dark" (dark background, light foreground)
+     "dark" (dark background, light foreground)
     # "light" (light background, dark foreground) (default)
 
     colorScheme = "dark"
